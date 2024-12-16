@@ -28,6 +28,12 @@ private:
 
 public:
 	template <typename T>
+	bool HasPool() const
+	{
+		std::type_index key = typeid(T);
+		return mPools.count(key) > 0;
+	}
+	template <typename T>
 	bool CreatePool(int initCapacity)
 	{
 		if (HasPool<T>() || initCapacity <= 0)
@@ -67,16 +73,15 @@ public:
 		{
 			CStaticMemoryPool<T>* pool = GetPool<T>();
 			pool->Deallocate(deallocPtr);
+
+			if (pool->IsPoolUnused())
+			{
+				DeletePool<T>();
+			}
 		}
 	}
 
 private:
-	template <typename T>
-	bool HasPool() const
-	{
-		std::type_index key = typeid(T);
-		return mPools.count(key) > 0;
-	}
 	template <typename T>
 	CStaticMemoryPool<T>* GetPool()
 	{

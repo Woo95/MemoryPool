@@ -96,4 +96,8 @@ private:
 	{
 		return ptr >= start && ptr <= end;
 	}
+	bool IsPoolUnused() const
+	{
+		return mFreeIdx.size() == mBlockSize * mMemoryPool.size();
+	}
 };
