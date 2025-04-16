@@ -9,13 +9,19 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
+    <Filter Include="SharedPtr">
+      <UniqueIdentifier>{93e3f15a-8eb1-4eec-8246-e1fe368f75cd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="MemoryPoolManager.cpp">
       <Filter>MemoryPool</Filter>
+    </ClCompile>
+    <ClCompile Include="main1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main2.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -24,6 +30,12 @@
     </ClInclude>
     <ClInclude Include="StaticMemoryPool.h">
       <Filter>MemoryPool</Filter>
+    </ClInclude>
+    <ClInclude Include="RefCounter.h">
+      <Filter>SharedPtr</Filter>
+    </ClInclude>
+    <ClInclude Include="SharedPtr.h">
+      <Filter>SharedPtr</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -4,6 +4,8 @@
 
 #define SIZE 300
 
+// 기본 메모리 풀링 샘플 //
+
 #pragma region SAMPLE CLASS
 class Object abstract
 {

@@ -72,7 +72,6 @@ private:
 				size_t totalPoolIdx = (mBlockSize * i) + currPoolIdx;
 				mFreeIdx.push(totalPoolIdx);
 
-				deallocPtr = nullptr;
 				break;
 			}
 		}
@@ -83,7 +82,7 @@ private:
 	{
 		// allocate or reallocate memory
 		T* newPool = (T*)malloc(sizeof(T) * mBlockSize);
-		mMemoryPool.push_back(newPool);
+		mMemoryPool.emplace_back(newPool);
 
 		// update mFreeIdx
 		size_t freeIdx = (mBlockSize * mMemoryPool.size()) - 1;
