@@ -2,7 +2,10 @@
 
 class CRefCounter abstract
 {
-public:
+    template <typename T>
+    friend class CSharedPtr;
+
+protected:
     CRefCounter() = default;
     virtual ~CRefCounter() = default;
 
@@ -12,7 +15,7 @@ private:
 private:
     virtual void Release() = 0;
 
-public:
+private:
     void IncrementRef()
     {
         mRefCount++;
